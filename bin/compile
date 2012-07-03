@@ -101,6 +101,7 @@ function package_download() {
 
 function package_assets() {
   cd /app
+  echo "-----> Packaging assets with hem"
   node_modules/hem/bin/hem build
 }
 
@@ -175,5 +176,4 @@ run_npm "install --production"
 run_npm "rebuild"
 echo "Dependencies installed" | indent
 
-# package up assets using hem
 package_assets

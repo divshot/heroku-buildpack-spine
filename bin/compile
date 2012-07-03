@@ -100,9 +100,9 @@ function package_download() {
 }
 
 function package_assets() {
-  cd /app
+  cd $BUILD_DIR
   echo "-----> Packaging assets with hem"
-  node_modules/hem/bin/hem build
+  ./node_modules/hem/bin/hem build
 }
 
 bootstrap_node=$(mktmpdir bootstrap_node)

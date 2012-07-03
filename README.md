@@ -15,7 +15,7 @@ Example usage:
     $ ls
     Procfile  package.json  web.js
 
-    $ heroku create --stack cedar --buildpack http://github.com/heroku/heroku-buildpack-nodejs.git
+    $ heroku create --stack cedar --buildpack http://github.com/divshot/heroku-buildpack-spine.git
 
     $ git push heroku master
     ...
@@ -29,6 +29,10 @@ Example usage:
            ├── qs@0.3.1
            └── connect@1.6.2
            Dependencies installed
+           
+If you're working with an existing app, you can just change the `BUILDPACK_URL`:
+
+    heroku config:add BUILDPACK_URL=git://github.com/divshot/heroku-buildpack-spine.git
 
 The buildpack will detect your app as Node.js if it has the file `package.json` in the root.  It will use NPM to install your dependencies, and vendors a version of the Node.js runtime into your slug.  The `node_modules` directory will be cached between builds to allow for faster NPM install time.
 

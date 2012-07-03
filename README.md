@@ -1,5 +1,8 @@
-Heroku buildpack: Node.js
-=========================
+Heroku buildpack: Spine.app
+===========================
+
+**Note:** This is a *barely* modified version of the Node.js buildpack. It simply runs `hem build`
+as part of the build process so you don't have to commit compiled assets.
 
 This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for Node.js apps.
 It uses [NPM](http://npmjs.org/) and [SCons](http://www.scons.org/).

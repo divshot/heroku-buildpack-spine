@@ -99,6 +99,11 @@ function package_download() {
   curl $package -s -o - | tar xzf - -C $location
 }
 
+function package_assets() {
+  cd /app
+  node_modules/hem/bin/hem build
+}
+
 bootstrap_node=$(mktmpdir bootstrap_node)
 package_download "nodejs" "0.4.7" $bootstrap_node
 
@@ -169,3 +174,6 @@ echo "-----> Installing dependencies with npm"
 run_npm "install --production"
 run_npm "rebuild"
 echo "Dependencies installed" | indent
+
+# package up assets using hem
+package_assets
